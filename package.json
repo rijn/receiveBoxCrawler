@@ -1,0 +1,19 @@
+{
+  "name": "receive-box-crawler",
+  "version": "0.0.1",
+  "description": "A crawler fetching all emails from receive boxes.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rijn/receiveBoxCrawler.git"
+  },
+  "author": "Rijn",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rijn/receiveBoxCrawler/issues"
+  },
+  "homepage": "https://github.com/rijn/receiveBoxCrawler#readme"
+}
