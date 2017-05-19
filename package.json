@@ -4,6 +4,7 @@
   "description": "A crawler fetching all emails from receive boxes.",
   "main": "index.js",
   "scripts": {
+    "fetch": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -15,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/rijn/receiveBoxCrawler/issues"
   },
-  "homepage": "https://github.com/rijn/receiveBoxCrawler#readme"
+  "homepage": "https://github.com/rijn/receiveBoxCrawler#readme",
+  "dependencies": {
+    "imap": "^0.8.19",
+    "underscore": "^1.8.3"
+  }
 }
