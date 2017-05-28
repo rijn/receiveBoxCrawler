@@ -79,14 +79,23 @@ imap.once('end', function() {
     console.log('Connection ended');
 
     if (config.length) {
-        imap = new Imap(config.pop());
-        imap.connect();
+        // imap = new Imap(config.pop());
+        console.log(imap._config);
+        // imap.connect();
     } else {
-        fs.writeFile('result.json', JSON.stringify(results), function(err) {
+        var keys = _.keys(results[0].messages[0]);
+        var stringify = keys.join(',');
+        for (var keyHost in results) {
+            if (!results.hasOwnProperty(keyHost)) continue;
+            for (var keyMessage in results[keyHost].messages) {
+                if (!results[keyHost].messages.hasOwnProperty(keyMessage)) continue;
+                stringify += '\n' + _.values(_.pick(results[keyHost].messages[keyMessage], keys)).join(',');
+            }
+        }
+        fs.writeFile('result.csv', stringify, 'utf8', function(err) {
             if(err) {
                 return console.log(err);
             }
-
             console.log("The file was saved!");
         });
     }
